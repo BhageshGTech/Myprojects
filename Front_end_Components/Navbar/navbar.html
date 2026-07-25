@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navigation bar Toggle</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+      }
+
+      .brandbtn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      .brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        gap: 10px;
+      }
+      .brand img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 1px solid white;
+        object-fit: cover;
+        background-position: 100%;
+      }
+      #menubtn {
+        border: none;
+        display: none;
+        padding: 10px;
+        font-size: 14px;
+        color: white;
+        box-shadow: 0 0 1px white;
+        font-weight: bold;
+        background-color: transparent;
+      }
+      .navbarmenu {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 19px;
+        padding: 10px;
+      }
+      .navbarmenu li {
+        list-style: none;
+        padding: 7px;
+        border-radius: 4px;
+      }
+
+      .navbarmenu li a {
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        text-transform: capitalize;
+      }
+      .navbarmenu li:hover {
+        box-shadow: 0 -1px 0px aqua inset;
+        transition: 0.2s ease-in-out;
+      }
+      @media screen and (max-width: 567px) {
+        nav {
+          display: block;
+          background-color: transparent;
+        }
+        .brandbtn {
+          padding: 10px;
+          background-color: black;
+        }
+        #menubtn {
+          display: block;
+        }
+        .navbarmenu {
+          display: none;
+        }
+        .navbarmenu li {
+          background-color: rgb(41, 37, 33);
+          margin: 10px 0px;
+          padding: 10px;
+        }
+        .navbarmenu li:hover {
+          background-color: rgb(92, 99, 96);
+          box-shadow: none;
+        }
+        .navbarmenu li a {
+          color: rgb(235, 228, 228);
+          font-size: 24px;
+        }
+        .toggler {
+          display: block;
+          transition: max-height 0.6s ease;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brandbtn">
+        <div class="brand">
+          <img src="./images/Gtechlogo (2).png" alt="" />
+          <h2>G Technology</h2>
+        </div>
+
+        <button id="menubtn" onclick="myfunction()" type="button">menu</button>
+      </div>
+
+      <ul class="navbarmenu" id="navbarmenu">
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">Project</a>
+        </li>
+        <li>
+          <a href="">Blog</a>
+        </li>
+        <li>
+          <a href="">About</a>
+        </li>
+        <li>
+          <a href="">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      function myfunction() {
+        var navbarmenu = document.getElementById("navbarmenu");
+        navbarmenu.classList.toggle("toggler");
+      }
+    </script>
+  </body>
+</html>
